@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Pâtisserie du Meurice par Cedric Grolet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Tangerine&family=Whisper&family=Work+Sans:wght@400;500;600&family=Yesteryear&family=Ysabeau+Infant:wght@400;800;900&family=Yrsa:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fondo: #faf5eb;
+      --dorado: #d7c259;
+      --marron: #3d2925;
+      --gris: #79685f;
+      --vino: #922f43;
+      --enlace: #828ed5;
+      --linea: #dccdbd;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { max-width: 390px; margin: 0 auto; background: var(--fondo); font-family: "Work Sans", sans-serif; color: #000; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; background: #ddd; }
+    section { box-shadow: 0 4px 4px rgba(0,0,0,.25); }
+
+    .eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--dorado); }
+    .titulo { font-family: "Yrsa", serif; font-size: 38px; line-height: 1.02; letter-spacing: -.76px; color: var(--marron); }
+    .boton { display: flex; justify-content: space-between; align-items: center; height: 34px; padding: 0 20px; border-radius: 100px; background: var(--dorado); color: var(--fondo); font-size: 13px; font-weight: 500; text-decoration: none; }
+
+    /* Portada */
+    .portada { background: #fff; padding: 16px 15px 0; }
+    .portada .eyebrow { font-family: "Ysabeau Infant", sans-serif; font-size: 16px; font-weight: 800; letter-spacing: .16px; text-transform: none; }
+    .portada h1 { font-family: "Yrsa", serif; font-size: 40px; letter-spacing: .4px; padding: 24px 15px 0; }
+    .portada p.texto { font-family: "Ysabeau Infant", sans-serif; font-size: 13px; color: rgba(0,0,0,.5); padding: 60px 22px 0; letter-spacing: .13px; }
+    .portada .boton { margin: 28px 45px 40px 15px; }
+    .foto-hero { height: 531px; margin: 0 -15px; }
+    .cita { margin: 50px -5px 0; padding: 14px 13px 14px; border: 1px solid var(--dorado); font-family: "Yrsa", serif; font-size: 16px; letter-spacing: .16px; }
+    .cita span { display: inline-block; font-family: "Ysabeau Infant", sans-serif; font-size: 10px; font-weight: 800; margin: 8px 8px 0 0; }
+    .cita span + span { font-weight: 900; color: var(--dorado); }
+    .portada { padding-bottom: 20px; }
+
+    /* Encabezados de sección */
+    .encabezado { padding: 14px 18px 40px; }
+    .encabezado .titulo { margin: 12px 0 28px; }
+    .encabezado p:last-child { font-size: 13px; letter-spacing: -.26px; color: var(--gris); }
+
+    /* Filas de productos */
+    .fila { display: grid; grid-template-columns: 1fr 1fr; background: #fff; padding: 26px 0 40px; }
+    .producto { padding: 0 15px; }
+    .producto + .producto { border-left: 1px solid var(--marron); }
+    .producto .foto { height: 193px; border: 3px solid var(--dorado); margin-bottom: 24px; }
+    .producto h3 { font-family: "Yesteryear", cursive; font-weight: 400; font-size: 24px; letter-spacing: -.48px; line-height: 1.02; margin-bottom: 14px; text-align: center; }
+    .producto p { font-family: "Whisper", cursive; font-size: 20px; line-height: 1.02; letter-spacing: -.4px; margin-bottom: 20px; }
+    .producto .precio { font-family: "Yesteryear", cursive; font-size: 24px; }
+
+    /* Especiales */
+    .especiales { background: #e8dead; padding: 27px 14px 40px 20px; }
+    .especiales .etiqueta { font-family: "Yesteryear", cursive; font-size: 12px; margin-bottom: 24px; }
+    .especial { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 40px; }
+    .especial.inversa { flex-direction: row-reverse; }
+    .especial .foto { flex: none; width: 214px; height: 245px; border: 3px solid #fff; box-shadow: 0 4px 4px rgba(0,0,0,.25); }
+    .especial h3 { font-family: "Yesteryear", cursive; font-weight: 400; font-size: 24px; line-height: 1.02; letter-spacing: -.48px; margin-bottom: 14px; }
+    .especial p { font-family: "Whisper", cursive; font-size: 24px; line-height: 1.02; letter-spacing: -.48px; }
+
+    /* Pastelero */
+    .pastelero { background: #fff; padding: 25px 31px 40px; }
+    .pastelero h2 { font-family: "Tangerine", cursive; font-weight: 400; font-size: 36px; text-align: center; }
+    .pastelero h2 + p { font-family: "Yesteryear", cursive; font-size: 24px; text-align: center; margin-bottom: 20px; }
+    .pastelero .foto { width: 220px; height: 289px; border: 6px solid var(--dorado); margin-bottom: 10px; }
+    .pastelero h3 { font-family: "Yesteryear", cursive; font-weight: 400; font-size: 24px; margin: 0 0 12px 22px; }
+    .pastelero .texto { font-family: "Cormorant Garamond", serif; font-size: 12px; max-width: 274px; }
+    .pastelero .texto b { font-weight: 400; font-size: 24px; }
+    .pastelero .texto em { font-style: normal; font-size: 14px; }
+    .pastelero .texto strong { font-family: "Whisper", cursive; font-weight: 400; font-size: 24px; }
+
+    /* Redes */
+    .redes { padding: 40px 24px; text-align: center; }
+    .redes .titulo { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 38px; margin: 12px 0 40px; }
+    .redes .sigue { font-size: 13px; font-weight: 500; text-align: left; margin-bottom: 12px; }
+    .red { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 36px; }
+    .red div { width: 221px; border-top: 1px solid var(--linea); padding-top: 12px; }
+    .red h3 { font-size: 13px; font-weight: 500; color: var(--marron); line-height: 1.4; margin-bottom: 12px; }
+    .red p { font-size: 12px; line-height: 1.6; color: var(--gris); }
+    .red a { color: var(--enlace); word-break: break-all; }
+    .red .icono { flex: none; width: 47px; height: 47px; border-radius: 50%; overflow: hidden; border: 0; padding: 8px; background: #fff; display: flex; align-items: center; justify-content: center; }
+    .red .icono img { width: 100%; height: 100%; object-fit: contain; background: transparent; }
+    .red a.icono { text-decoration: none; }
+
+    /* Invitación final */
+    .final { background: #cfc48f; padding: 40px 18px; display: flex; flex-direction: column; gap: 16px; }
+    .final .eyebrow { color: #fff; }
+    .final h2 { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 46px; line-height: 1.02; letter-spacing: -.92px; color: #8c6d30; }
+    .final .direccion { font-size: 13px; letter-spacing: -.26px; color: var(--fondo); }
+    .final .direccion span { color: rgba(72,68,44,.91); }
+    .final .correo { font-size: 12px; color: var(--fondo); }
+    .final .boton { height: 50px; background: var(--fondo); color: var(--vino); }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <section class="portada">
+    <p class="eyebrow">Entra en un mundo fantástico</p>
+    <h1>La Pâtisserie du Meurice par Cedric Grolet</h1>
+    <p class="texto">Nuestra boutique de pastelería está dedicada a las maravillosas colecciones de nuestro talentoso pastelero, Cedric Grolet. Aquí descubrirás sus creaciones más emblemáticas, incluyendo los renombrados Fruits Sculptés, que también encontrarás en todo nuestro hotel, en nuestros restaurantes y como parte de nuestras propuestas de brunch y té de la tarde.</p>
+    <a class="boton" href="#">haz clic y recoge <span>↗</span></a>
+
+    <!-- FOTO: portada (Cedric con la vitrina de frutas) -->
+    <div class="foto-hero"><img src="imghero.jpg" alt="Cedric Grolet con su vitrina de pastelería"></div>
+
+    <blockquote class="cita">
+      “la belleza los atrae, pero el gusto los devuelve de vuelta”<br>
+      <span>CEDRIC GROLET</span><span>PASTELERO</span>
+    </blockquote>
+  </section>
+
+  <!-- FAVORITOS -->
+  <div class="encabezado">
+    <p class="eyebrow">Los favoritos</p>
+    <h2 class="titulo">LE MEURICE</h2>
+    <p>Nuestras mejores creaciones estacionales.<br><br>¿cual probaras hoy?</p>
+  </div>
+
+  <!-- Fila 1 -->
+  <section class="fila">
+    <article class="producto">
+      <!-- FOTO: mango -->
+      <div class="foto"><img src="imgmango.jpg" alt="Mango"></div>
+      <h3>mango</h3>
+      <p>Mango vainilla con corazón líquido, mousse de mango.</p>
+      <span class="precio">18 €</span>
+    </article>
+    <article class="producto">
+      <!-- FOTO: pistacho -->
+      <div class="foto"><img src="imgpistacho.jpg" alt="Pistacho"></div>
+      <h3>pistacho</h3>
+      <p>Crema de pistacho de Cedric et la Chocolaterie, corazón de pistacho con leche líquida, pralina de pistacho con croustillant y fleur de sel, mousse de pistacho.</p>
+      <span class="precio">18 €</span>
+    </article>
+  </section>
+
+  <!-- Fila 2 -->
+  <section class="fila">
+    <article class="producto">
+      <!-- FOTO: manzana roja -->
+      <div class="foto"><img src="imgmanzana-roja.jpg" alt="Manzana roja"></div>
+      <h3>Manzana roja</h3>
+      <p>Manzana roja y corazón líquido de vainilla, galleta de vainilla, praliné de vainilla y croustillant sablé breton, mousse de vainilla.</p>
+      <span class="precio">18 €</span>
+    </article>
+    <article class="producto">
+      <!-- FOTO: trompe-l'œil de arándano -->
+      <div class="foto"><img src="imgarandano.jpg" alt="Trompe-l'œil de Arándano"></div>
+      <h3>Trompe-l'œil de Arándano</h3>
+      <p>compota y mermelada de arándanos, queso crema, azúcar glass, esencia de vainilla, chocolate blanco, manteca de cacao y aceite de coco.</p>
+      <span class="precio">18 €</span>
+    </article>
+  </section>
+
+  <!-- Fila 3 -->
+  <section class="fila">
+    <article class="producto">
+      <!-- FOTO: nuez -->
+      <div class="foto"><img src="imgnuez.jpg" alt="Nuez"></div>
+      <h3>Nuez</h3>
+      <p>Croustillant de praliné de nueces con flor de sal, caramelo de vainilla, crema de nueces Cédric et la Chocolaterie, mousse de nueces.</p>
+      <span class="precio">18 €</span>
+    </article>
+    <article class="producto">
+      <!-- FOTO: trompe-l'œil de limón -->
+      <div class="foto"><img src="imglimon.jpg" alt="Trompe-l'œil de Limón"></div>
+      <h3>Trompe-l'œil de Limón</h3>
+      <p>Lemon curd (o mermelada de limón), queso crema (o ganache de chocolate blanco), azúcar glass, ralladura o esencia de limón, chocolate blanco, manteca de cacao (o aceite de coco) y colorante comestible amarillo.</p>
+      <span class="precio">18 €</span>
+    </article>
+  </section>
+
+  <!-- PRECIOS -->
+  <div class="encabezado">
+    <p class="eyebrow">Nuestros precios</p>
+    <h2 class="titulo">LE MEURICE</h2>
+    <p>ofrecemos los mejores precios para nuestros compradores esperando su total satisfaccion.</p>
+  </div>
+
+  <!-- ESPECIALES -->
+  <section class="especiales">
+    <p class="etiqueta">NUESTROS ESPECIALES</p>
+
+    <article class="especial">
+      <div>
+        <h3>XXL Pop-Corn</h3>
+        <p>Caramelo onctueux vanille, palomitas de maíz saladas, praliné crujiente, mousse de palomitas de maíz.</p>
+      </div>
+      <!-- FOTO: XXL Pop-Corn -->
+      <div class="foto"><img src="imgpopcorn.jpg" alt="XXL Pop-Corn"></div>
+    </article>
+
+    <article class="especial inversa">
+      <div>
+        <h3>Pot de Chouchou XXL</h3>
+        <p>Caramelo de vainilla suave, croustillant de praliné chouchou, mousse de chouchou.</p>
+      </div>
+      <!-- FOTO: Pot de Chouchou XXL -->
+      <div class="foto"><img src="imgchouchou.jpg" alt="Pot de Chouchou XXL"></div>
+    </article>
+  </section>
+
+  <!-- PASTELERO -->
+  <section class="pastelero">
+    <h2>mas sobre nuestro pastelero</h2>
+    <p>cedric grolet</p>
+    <!-- FOTO: Cedric Grolet -->
+    <div class="foto"><img src="imgcedric.jpg" alt="Cedric Grolet"></div>
+    <h3>La crème de la crème</h3>
+    <p class="texto"><b>C</b>edric Grolet se unió a Le Meurice en 2011, convirtiéndose rápidamente en nuestro chef jefe de pastelería – y en un renombre mundial en el proceso. En 2018, abrió su primera boutique en el hotel. Descubre un mundo fantástico de pastelería, donde ni siquiera las frutas son <em>exactamente lo que</em> <strong>parecen...</strong></p>
+  </section>
+
+  <!-- REDES -->
+  <section class="redes">
+    <p class="eyebrow">siguenos en nuestras redes</p>
+    <h2 class="titulo">La Pâtisserie du Meurice por Cedric Grolet</h2>
+    <p class="sigue">sigenos en:</p>
+
+    <div class="red">
+      <div>
+        <h3>tiktok</h3>
+        <p>como <a href="https://www.tiktok.com/@cedricgrolet?_r=1&_t=ZS-9Al9XveYFVp">@cedricgrolet</a><br><a href="https://www.tiktok.com/@cedricgrolet?_r=1&_t=ZS-9Al9XveYFVp">https://www.tiktok.com/@cedricgrolet?_r=1&_t=ZS-9Al9XveYFVp</a></p>
+      </div>
+      <a class="icono" href="https://www.tiktok.com/@cedricgrolet" target="_blank" rel="noopener noreferrer">
+        <img src="img/tiktok.png" alt="TikTok">
+      </a>
+    </div>
+
+    <div class="red">
+      <div>
+        <h3>instagram</h3>
+        <p>como <a href="https://www.instagram.com/cedricgrolet?dlrf=ejFlNzU0Nm1nb285">@Cedricgrolet:</a><br><a href="https://www.instagram.com/cedricgrolet?dlrf=ejFlNzU0Nm1nb285">https://www.instagram.com/cedricgrolet?dlrf=ejFlNzU0Nm1nb285</a></p>
+      </div>
+      <a class="icono" href="https://www.instagram.com/cedricgrolet" target="_blank" rel="noopener noreferrer">
+        <img src="img/instagram.png" alt="Instagram">
+      </a>
+    </div>
+
+    <div class="red">
+      <div>
+        <h3>google</h3>
+        <p>en:<br><a href="https://cedric-grolet.com/meurice/en" target="_blank">Haz clic y recoge | Cedric Grolet Le Meurice - Clic y Recoger</a></p>
+      </div>
+      <a class="icono" href="https://cedric-grolet.com/meurice/en" target="_blank" rel="noopener noreferrer">
+        <img src="img/google.png" alt="Google">
+      </a>
+    </div>
+  </section>
+
+  <!-- INVITACIÓN FINAL -->
+  <section class="final">
+    <p class="eyebrow">estamos ubicados en</p>
+    <h2>La Pâtisserie du Meurice par Cedric Grolet</h2>
+    <p class="direccion">6 rue de Castiglione<span>, 75001 París,</span></p>
+    <p class="correo">hola@migaymiel.example · correo de ejemplo</p>
+    <a class="boton" href="#">Cuéntanos tu idea <span>↗</span></a>
+  </section>
+
+</body>
+</html>
